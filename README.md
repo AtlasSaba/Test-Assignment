@@ -89,7 +89,7 @@ Request body : *{"title":"test#6 updated","content":"content##6 test upodated"}*
 - **URL**: `/api/blog-post/<post_id>/`
 - **Method**: DELETE
 - **Description**: Delete an existing blog post by its ID.
-- - **Example Response**: /api/blog-post/6/
+- **Example Response**: /api/blog-post/6/
 ```
 {
     "message": "successfully deleted blog post"
