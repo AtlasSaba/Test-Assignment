@@ -15,14 +15,9 @@ class ListAllPosts(APIView):
 	def post(self,request):
 		serializer = AllPostsSerializer(data=request.data)
 		if serializer.is_valid():
-			print("requested user == ",request.user.id)
-			# serializer.save(request.user)
-			data = serializer.data
-			data['author'] =request.user.id
-			print(data)
-			BlogPost.objects.create(data)
+			serializer.validated_data['author'] = request.user
+			serializer.save()
 			return Response(serializer.data)
-
 		return Response(serializer.errors)
 
 
